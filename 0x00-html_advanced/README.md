@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # 0x00. Advanced HTML
 
 ### Learning Objectives:
@@ -21,7 +20,3 @@
 
 ##### Specializations - Web Stack programming ― Front-end
 ##### December, 2020. Cali, Colombia.
-=======
-# Web Stack programming ― Front-end
-Holberton School
->>>>>>> 1a41ec009a431def8dde1798ff3cf40a385b6661
