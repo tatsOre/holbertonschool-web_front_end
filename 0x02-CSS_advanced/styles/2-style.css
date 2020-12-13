@@ -1,14 +1,23 @@
 html {
   scroll-behavior: smooth;
 }
-/* Foreground Colors */
-body, a {
+
+body {
   color: #161616;
 }
-*.card-category, *.section-tagline {
-  color: #D73953;
+
+a {
+  color: #161616;
 }
-/* Hidden Elements */
-*.visually-hidden {
+
+.visually-hidden {
   display: none;
+}
+
+.card-category {
+  color: #d73953;
+}
+
+.section-tagline {
+  color: #d73953;
 }
