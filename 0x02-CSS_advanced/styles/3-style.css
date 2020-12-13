@@ -1,0 +1,25 @@
+/* Task No. 3 */
+:root {
+  --color-primary: #d73953;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --color-light-grey: #f3f3f3;
+  --color-dark-grey: #353535;
+  --text-color: var(--color-black);
+}
+/* Task No. 1 */
+html {
+  scroll-behavior: smooth;
+}
+/* Task No. 2, 3 */
+/* Foreground Colors */
+body, a {
+  color: var(--text-color);
+}
+*.card-category, *.section-tagline {
+  color: var(--color-primary);
+}
+/* Hidden Elements */
+*.visually-hidden {
+  display: none;
+}

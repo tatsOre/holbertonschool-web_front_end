@@ -1,0 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Foreground Colors */
+body, a {
+  color: #161616;
+}
+*.card-category, *.section-tagline {
+  color: #D73953;
+}
+/* Hidden Elements */
+*.visually-hidden {
+  display: none;
+}
