@@ -1,7 +1,7 @@
 # 0x00. Advanced HTML
 
 ## End goal of the project
-[![Techium_mock]()
+[![Techium_mock](https://github.com/tatsOre/holbertonschool-web_front_end/blob/master/0x02-CSS_advanced/images/mockup.png)
 
 ### Learning Objectives:
 * Selectors, properties, and values
