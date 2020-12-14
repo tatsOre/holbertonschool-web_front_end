@@ -1,2 +1,2 @@
-# Web Stack programming ― Front-end ## test
+# Web Stack programming ― Front-end
 Holberton School
