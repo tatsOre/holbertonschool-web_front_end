@@ -1,0 +1,7 @@
+/* Assigns styles to body and elems with class 'red' that are the first children of the body using nested declarations*/
+body {
+  color: #3D3D3D;
+  > .red {
+    color: #FF0000;
+  }
+}
