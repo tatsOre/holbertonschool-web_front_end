@@ -1,7 +1,7 @@
 # 0x06. Responsive design
 
-## End goal of the project:
-![Techium_mock_responsive_version](https://github.com/tatsOre/holbertonschool-web_front_end/blob/master/0x06-responsive_design/images/mockup.png)
+## Wireframe of the Techium project - mobile version:
+![Techium_mock_responsive_version](https://github.com/tatsOre/holbertonschool-web_front_end/blob/master/0x06-responsive_design/images/a1f906a6a39eba8cb2f3d2877abc9ea84be51d9d.png)
 
 ### Learning Objectives:
 * Mobile-first design
