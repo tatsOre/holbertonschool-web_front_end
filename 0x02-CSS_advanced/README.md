@@ -1,4 +1,4 @@
-# 0x00. Advanced HTML
+# 0x02. Advanced CSS
 
 ## End goal of the project:
 ![Techium_mock](https://github.com/tatsOre/holbertonschool-web_front_end/blob/master/0x02-CSS_advanced/images/mockup.png)
