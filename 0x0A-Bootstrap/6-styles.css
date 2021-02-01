@@ -1,0 +1,64 @@
+/* Header border Redefined
+  ============================================= */
+
+.border-bottom {
+  border-color: #E0003C !important;
+}
+
+/* Button Styles Redefined
+============================================= */
+
+.btn-primary {
+  background-color: #E0003C;
+  border-color: #E0003C;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #BC1340 !important;
+  border-color: #BC1340;
+}
+
+.btn-outline-primary {
+  color: #E0003C;
+  border-color: #E0003C;
+
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active {
+  border-color: #E0003C;
+  color: #FFFFFF !important;
+  background-color: #E0003C !important;
+}
+
+/* Links Styles Redefined
+   ============================================= */
+
+a, a:hover, a:focus {
+  color: #e0003c;
+}
+
+/* Cards Styles Redefined
+   ============================================= */
+
+.card {
+  border-color: #E0003C;
+  border-radius: 1rem;
+}
+
+.card-header, .card-footer {
+  background-color: #E0003C;
+  border-color: #E0003C;
+  border-radius: 1rem;
+  color: #FFFFFF;
+}
+
+.card-header:first-child {
+  border-radius: calc(1rem - 1px) calc(1rem - 1px)  0 0;
+}
+
+.text-muted {
+  color: #8C8C8C;
+}
