@@ -1,15 +1,23 @@
-#!/usr/bin/node
 /**
- * Binding
+ * Binding + Closure
  */
-let roomDimensions = {
-  width: 50,
-  length: 100,
-  getArea() {
-    return this.width * this.length;
-  }
+const user = {
+  hobby: 'Calligraphy',
+  favoriteSport: 'Hockey',
+  astrologicalSign: 'Aries',
+  firstName: 'Buillaume',
+  lastName: 'Ialva',
+  location: 'Telaviv',
+  occupation: 'Engineer'
+};
+
+function logWelcomeUser (welcomeString) {
+  console.log(
+    `${welcomeString}, ${this.firstName}. Your occupation is: ${this.occupation}`
+    );
 }
 
-const boundGetArea = roomDimensions.getArea.bind(roomDimensions);
-console.log(roomDimensions.getArea());
-console.log(boundGetArea());
+const bindLogWelcomeUser = logWelcomeUser.bind(user);
+
+bindLogWelcomeUser('Welcome');
+bindLogWelcomeUser('Hello');
