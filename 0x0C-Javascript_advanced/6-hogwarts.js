@@ -1,3 +1,4 @@
+#!/usr/bin/node
 /**
  * @function studentHogwarts - self invoking function that define
  * a Hogwarts student.
@@ -17,26 +18,26 @@ const studentHogwarts = function () {
    * setName - Public method and setter for name variable
    * @param {String} newName
    */
-  studentHogwarts.prototype.setName = function (newName) {
+  this.setName = function (newName) {
     name = newName;
   };
   /**
    * rewardStudent - Public method that increments privateScore
    */
-  studentHogwarts.prototype.rewardStudent = function () {
+  this.rewardStudent = function () {
     changeScoreBy(1);
   };
   /**
    * penalizeStudent - Public method that decrements privateScore
    */
-  studentHogwarts.prototype.penalizeStudent = function () {
+  this.penalizeStudent = function () {
     changeScoreBy(-1);
   };
   /**
    * getScore - Getter name and score
    * @returns string
    */
-  studentHogwarts.prototype.getScore = function () {
+  this.getScore = function () {
     return `${name}: ${privateScore}`;
   };
 };
@@ -55,4 +56,10 @@ const draco = new studentHogwarts();
 draco.setName('Draco');
 draco.rewardStudent();
 for (let i = 0; i < 3; i++) draco.penalizeStudent();
+console.log(draco.getScore());
+
+harry.penalizeStudent();
+draco.rewardStudent();
+
+console.log(harry.getScore());
 console.log(draco.getScore());
