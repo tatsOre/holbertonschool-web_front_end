@@ -1,7 +1,6 @@
 /**
  * Execution stack & timing execution
  */
-const performance = require('perf_hooks').performance;
 
 const countPrimeNumbers = (num) => {
   const primeNumbers = new Array(num);

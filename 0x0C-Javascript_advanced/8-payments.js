@@ -1,7 +1,6 @@
 /**
  * Stack order in functions
  */
-const processPayment = (amount) => console.log(`Collecting payment of ${amount}`);
 
 const processOrder = (orderId, amount) => {
   console.log(`${orderId} is being processed`);

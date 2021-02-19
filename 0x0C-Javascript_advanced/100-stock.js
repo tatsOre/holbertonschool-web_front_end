@@ -13,9 +13,7 @@ const processPayment = (itemName) => {
 };
 
 const processError = (itemName) => {
-  stock.hasOwnProperty(itemName)
-    ? console.log(`No more ${itemName} in stock`)
-    : console.log(`Item ${itemName} is not offered`);
+  console.log(`No more ${itemName} in stock`)
   console.log('Payment is not being processed');
 };
 
