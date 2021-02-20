@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "Let It Bleed",
+      "author": "Rolling Stones",
+      "id": 2
+    },
+    {
+      "title": "Tattoo You",
+      "author": "Rolling Stones",
+      "id": 3
+    },
+    {
+      "title": "Love",
+      "author": "The Cult",
+      "id": 4
+    },
+    {
+      "title": "Houses of the Holy",
+      "author": "Led Zeppelin",
+      "id": 5
+    },
+    {
+      "title": "...And Justice for All",
+      "author": "Metallica",
+      "id": 6
+    },
+    {
+      "title": "In Utero",
+      "author": "Nirvana",
+      "id": 7
+    },
+    {
+      "title": "Doolittle",
+      "author": "Pixies",
+      "id": 8
+    },
+    {
+      "title": "Raw Power",
+      "author": "The Stooges",
+      "id": 9
+    },
+    {
+      "title": "Post Pop Depression",
+      "author": "Iggy Pop",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "This is a very special comment.",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "Susie RadioX"
+  }
+}
