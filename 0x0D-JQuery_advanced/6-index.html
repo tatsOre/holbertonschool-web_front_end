@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <title>Task 6</title>
+        <script
+        src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+
+          function createFamilyTree () {
+            $('body').append(`
+              <table>
+                <thead>
+                  <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                  </tr>
+                </thead>
+              </table>`
+            ),
+            $('table').append('<tbody></tbody>');
+          };
+
+          function addNewMember (firstName, lastName, position) {
+            const content = `
+              <tr>
+                <td>${firstName}</td>
+                <td>${lastName}</td>
+                <td>(x)</td>
+              </tr>`
+            position == 'before'
+              ? $('tbody').prepend(content)
+              : $('tbody').append(content);
+
+            $('tr td:last-child').css('background-color', 'orange')
+                                 .click((event) => $(event.currentTarget).parent().remove());
+          }
+
+          function createForm () {
+            $('table').before(`
+                <input type="text"></input>
+                <input type="text"></input>
+                <select>
+                  <option value="before">Before</option>
+                  <option value="after">After</option>
+                </select>
+                <input type="submit">
+            `);
+
+            $('input[type="submit"]').click(function() {
+              const firstName = $('input').first().val();
+              const lastName = $('input:nth-of-type(2)').val();
+              const position = $('select').val();
+              addNewMember(firstName, lastName, position);
+            });
+          }
+
+          $(document).ready(function () {
+            createFamilyTree();
+            createForm();
+          });
+
+        </script>
+    </head>
+
+    <body>
+
+    </body>
+
+</html>
