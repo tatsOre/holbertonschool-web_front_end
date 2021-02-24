@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 4. Use js-cookie</title>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+  </head>
+
+  <body>
+    <div id="form">
+      <form>
+        <h2>Login to the website</h2>
+        <input type="text" id="firstname" placeholder="Firstname">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="setCookiesAndShowWelcomeMessage()">Log me in</button>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+
+      const showForm = () => {
+        const welcomeMsg = document.getElementsByTagName('h1')[0];
+
+        if (welcomeMsg) {
+          welcomeMsg.remove();
+        };
+        document.getElementById('form').style.display = 'block';
+      };
+
+
+      const hideForm = () =>
+        document.getElementById('form').style.display = 'none';
+
+
+      const setCookiesAndShowWelcomeMessage = () => {
+        const firstname = document.getElementById('firstname').value;
+        const email = document.getElementById('email').value;
+        
+        Cookies.set('firstname', firstname, { expires: 10 });
+        Cookies.set('email', email, { expires: 10 });
+
+        showWelcomeMessageOrForm();
+      };
+
+
+      const deleteCookiesAndShowForm = () => {
+        Cookies.remove('firstname', { path: '' });
+        Cookies.remove('email', { path: '' });
+        showForm();
+      };
+
+      const showWelcomeMessageOrForm = () => {
+        const userName = Cookies.get('firstname');
+        // If user is logged:
+        if (userName) {
+          const h1 = document.createElement('h1');
+          const link = document.createElement('a');
+
+          h1.innerHTML = `Welcome: ${userName}`
+          link.innerHTML = '(logout)';
+          link.addEventListener('click', deleteCookiesAndShowForm);
+          link.style.cssText = 'font-weight: normal; font-style: italic; margin-left: 10px';
+          h1.appendChild(link);
+          document.body.appendChild(h1);
+
+          hideForm();
+        } else {
+          showForm();
+        }
+      };
+      showWelcomeMessageOrForm();
+    </script>
+
+  </body>
+
+</html>
