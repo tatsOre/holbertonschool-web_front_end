@@ -10,7 +10,8 @@
 
     const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
 
-    const getCartFromStorage = () => sessionStorage.cart ? JSON.parse(sessionStorage.cart) : {};
+    const getCartFromStorage = () => 
+      sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : {};
 
     const removeItemfromCart = (item) => {
       const storageCart = getCartFromStorage();
