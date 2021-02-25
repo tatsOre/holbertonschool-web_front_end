@@ -15,8 +15,11 @@
 
     const removeItemfromCart = (item) => {
       const storageCart = getCartFromStorage();
-      delete storageCart[item];
-      sessionStorage.cart = JSON.stringify(storageCart);
+
+      if (storageCart && storageCart[item]) {
+        delete storageCart[item];
+        sessionStorage.setItem('cart', JSON.stringify(storageCart));
+      }
       displayCart();
     };
 
@@ -58,9 +61,7 @@
       let cartContainer = document.getElementById('cartContainer');
 
       if (cartContainer) {
-        while (cartContainer.hasChildNodes()) {
-          cartContainer.removeChild(cartContainer.childNodes[0]);
-        }
+        cartContainer.removeChild(cartContainer.firstChild);
       } else {
         cartContainer = document.createElement('div');
         cartContainer.setAttribute('id', 'cartContainer');
@@ -77,15 +78,15 @@
     };
     
     const addItemToCart = (item) => {
-      const storageCart = getCartFromStorage();
+      const cart = getCartFromStorage();
 
-      storageCart[item] ? storageCart[item] += 1 : storageCart[item] = 1;
-      sessionStorage.cart = JSON.stringify(storageCart);
+      cart && cart[item] ? cart[item] += 1 : cart[item] = 1;
+      sessionStorage.setItem('cart', JSON.stringify(cart));
       displayCart();
     };
 
     const clearCart = () => {
-      sessionStorage.clear();
+      sessionStorage.removeItem('cart');
       displayCart();
     };
 
