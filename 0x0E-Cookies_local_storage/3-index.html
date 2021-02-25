@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 3. Delete cookie and mini application</title>
+  </head>
+
+  <body>
+    <div id="form">
+      <form>
+        <h2>Login to the website</h2>
+        <input type="text" id="firstname" placeholder="Firstname">
+        <input type="text" id="email" placeholder="Email">
+        <button onclick="setCookies()">Log me in</button>
+      </form>
+    </div>
+
+    <script type="text/javascript">
+
+      const showForm = () => {
+        const welcomeMsg = document.getElementsByTagName('h1')[0];
+
+        if (welcomeMsg) {
+          welcomeMsg.remove();
+        };
+        document.getElementById('form').style.display = 'block';
+      };
+
+
+      const hideForm = () =>
+        document.getElementById('form').style.display = 'none';
+
+
+      function setCookies () {
+        const firstname = document.getElementById('firstname').value;
+        const email = document.getElementById('email').value;
+        const exdate = new Date();
+
+        exdate.setTime(exdate.getTime() + (10*24*60*60*1000)); // 10 days 
+        const expires = `expires=${exdate.toUTCString()}`;
+
+        document.cookie = `firstname=${firstname};${expires};path=/`;
+        document.cookie = `email=${email};${expires};path=/`;
+      };
+
+
+      const getCookie = (name) => {
+        const cname = name + "=";
+        const decodedCookie = decodeURIComponent(document.cookie);
+        const ca = decodedCookie.split(';');
+
+        for (let i = 0; i < ca.length; i++) {
+          let c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(cname) == 0) {
+            return c.substring(cname.length, c.length);
+          }
+        } 
+        return "";
+      };
+
+
+      const deleteCookiesAndShowForm = () => {
+        document.cookie = "firstname=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        showForm();
+      };
+
+      const showWelcomeMessageOrForm = () => {
+        const userName = getCookie('firstname');
+        // If user is logged:
+        if (userName) {
+          const h1 = document.createElement('h1');
+          const link = document.createElement('a');
+
+          h1.innerHTML = `Welcome: ${userName}`
+          link.innerHTML = '(logout)';
+          link.addEventListener('click', deleteCookiesAndShowForm);
+          link.style.cssText = 'font-weight: normal; font-style: italic; margin-left: 10px';
+          h1.appendChild(link);
+          document.body.appendChild(h1);
+
+          hideForm();
+        } else {
+          showForm();
+        }
+      };
+
+      showWelcomeMessageOrForm();
+
+    </script>
+
+  </body>
+
+</html>
