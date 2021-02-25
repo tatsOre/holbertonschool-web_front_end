@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Task 5. Local storage</title>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+
+    const availableItems = ['Shampoo', 'Soap', 'Sponge', 'Water'];
+
+    
+    const addItemToCart = (item) => localStorage.setItem(item, true);
+
+
+    const createStore = () => {
+      const ul = document.createElement('ul');
+
+      for (let item of availableItems) {
+        let listItem = document.createElement('li');
+        listItem.innerText = item;
+        listItem.addEventListener('click', () => addItemToCart(item));
+        ul.appendChild(listItem);
+      }
+
+      document.body.appendChild(ul);
+    };
+
+
+    const displayCart = () => {
+      const cartItemsNo = localStorage.length;
+
+      if (cartItemsNo) {
+        // Code just for educational purposes:
+        document.body.appendChild(
+          document.createElement('p').appendChild(
+            document.createTextNode(`You previously had ${cartItemsNo} items in your cart`)
+          ).parentNode
+        );
+        /* good code according documentation:
+        const p = document.createElement('p');
+        p.innerText = `You previously had ${cartItemsNo} items in your cart`;
+        document.body.appendChild(p); */
+      }
+    };
+
+    // Check browser support for localStorage:
+    if (typeof(Storage) !== 'undefined') {
+      createStore();
+      displayCart();
+      // window.localStorage.clear();
+    } else {
+      alert('Sorry, your browser does not support Web storage. Try again with a better one.');
+    };
+
+    </script>
+
+  </body>
+
+</html>
