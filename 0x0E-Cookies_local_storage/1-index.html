@@ -2,7 +2,19 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>Task 1. Create cookie with expiration date and specific path</title>
+    <title>Task 1. Create cookie with expiration date and specific path</title>                                                                        
+  </head>
+
+  <body>
+    <h2>Login to the website</h2>
+    <div>
+      <input type="text" id="firstname" placeholder="Firstname">
+      <input type="email" id="email" placeholder="Email">
+      <button onclick="setCookies()">Log me in</button>
+      <h2>Cookies</h2>
+      <button onclick="showCookies()">Show the cookies</button>
+    </div>
+
     <script type="text/javascript">
       const setCookies = () => {
         const firstname = document.getElementById('firstname').value;
@@ -16,27 +28,12 @@
         document.cookie = `email=${email};${expires};path=/`;
 
       };
-
       const showCookies = () => {
         const p = document.createElement('p');
-        const cookies = decodeURIComponent(document.cookie).split(';');
-        const values = [];
-        for (let value of cookies) values.push(value.split('=')[1]);
-        p.innerHTML = `Cookies: ${values.join(', ')}`;
-        document.body.appendChild(p);
+        p.innerHTML = `Cookies: ${document.cookie}`;
+        document.body.append(p);
       };
-    </script>                                                                               
-  </head>
-
-  <body>
-    <h2>Login to the website</h2>
-    <form>
-      <input type="text" id="firstname" placeholder="Firstname">
-      <input type="email" id="email" placeholder="Email">
-      <button onclick="setCookies()">Log me in</button>
-    </form>
-    <h2>Cookies</h2>
-    <button onclick="showCookies()">Show the cookies</button>
+    </script>
   </body>
 
 </html>
